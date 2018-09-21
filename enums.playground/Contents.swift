@@ -34,7 +34,13 @@ enum WeekDayNames : String {
     case sunday = "Sunday"
 }
 
-// Tyoed integer enum with automatic sequence (from 1, instead of 0)
+// Accessing an item of the enum : only get the original name of the enum element
+var positionName = WeekDayNames.monday // tuesday
+
+// Accessing an item value of the enum : use .rawValue to access the internal value and type
+var positionTextValue = WeekDayNames.tuesday.rawValue // "Tuesday" (String)
+
+// Typed integer enum with automatic sequence (from 1, instead of 0)
 enum WeekDayPositions : Int {
     case monday = 1
     case tuesday
@@ -45,7 +51,25 @@ enum WeekDayPositions : Int {
     case sunday
 }
 
-print(WeekDayPositions.tuesday) // 2
+// In this case, the .rawValue is automatically assinged to the next number sequence
+var positionIntValue = WeekDayPositions.tuesday.rawValue // 2 (Int)
+
+// Enums can be used as a switch options
+var dayType = ""
+var selectedDay = WeekDays.friday
+switch selectedDay {
+    case .saturday, .sunday:
+        dayType = "It's weekend!"
+    default:
+        dayType = "Not a weekend"
+}
+
+
+
+
+
+
+
 
 
 
