@@ -65,6 +65,52 @@ switch selectedDay {
 }
 
 
+// Enum with elements with unnamed parameters (only type)
+enum BasicShapes {
+    case circle(Int) // radius
+    case square(Int) // side
+    case rectangle(Int, Int) // width, height
+}
+
+// Using enum with parameterized unnamed elements
+var bigCircle2 = BasicShapes.circle(100)
+var smallRectangle2 = BasicShapes.rectangle(5, 8)
+
+// Enum with elements with named parameters (name: Type)
+enum Shapes{
+    case circle(radius: Int)
+    case square(side: Int) // side
+    case rectangle(width: Int, height: Int) // width, height
+}
+
+// Using enum with parameterized named elements
+var bigCircle1 = Shapes.circle(radius: 100)
+var smallRectangle1 = Shapes.rectangle(width: 5, height: 8)
+
+// Access enum parameters in a switch
+var selectedShape = smallRectangle2
+switch selectedShape {
+    case .circle(let radius):
+        dayType = "It's a circle of radius \(radius)"
+    case .rectangle(let width, let height):
+        dayType = "It's a rectangle of \(width) x \(height)"
+    default:
+        dayType = "It's a square"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
